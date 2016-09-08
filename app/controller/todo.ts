@@ -19,6 +19,7 @@ class todoController implements ItodoController{
     newTodoText:string
     
     constructor(){
+        console.log("nguyen dinh minh");
         this.todos=[
             {text:'learn angular', done:true},
             {text:'build an angular app', done:false}];
@@ -27,6 +28,8 @@ class todoController implements ItodoController{
     addTodo(){
         this.todos.push({text:this.newTodoText, done:false});
     }
+
+    
     
     remaining():number{
         let count:number=0;

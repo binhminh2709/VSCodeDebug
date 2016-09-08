@@ -5,21 +5,28 @@
 			"name": "Launch index.html",
 			"type": "chrome",
 			"request": "launch",
-			"file": "index.html"
+			"file": "index.html",
+			"diagnosticLogging": true
 		},
 		{
 			"name": "Launch localhost with sourcemaps",
 			"type": "chrome",
 			"request": "launch",
-			"url": "http://localhost:8080/index.html",
+			"url": "http://localhost:8080/",
 			"sourceMaps": true,
-			"webRoot": "."
+			//"webRoot": "."
+			"webRoot": "${workspaceRoot}",
+			"diagnosticLogging": true
 		},
 		{
-			"name": "Attach",
+			"name": "Attach Chrome",
 			"type": "chrome",
 			"request": "attach",
-			"port": 9222
+			"url": "http://localhost:8080/",
+			"port": 9222,
+			"sourceMaps": true,
+			"webRoot": "${workspaceRoot}",
+      		"diagnosticLogging": true
 		}
 	]
 }

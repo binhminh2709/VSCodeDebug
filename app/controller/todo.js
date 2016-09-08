@@ -2,7 +2,7 @@ var TodoElement = (function () {
     function TodoElement() {
     }
     return TodoElement;
-})();
+}());
 var todoController = (function () {
     function todoController() {
         this.todos = [
@@ -31,6 +31,6 @@ var todoController = (function () {
         });
     };
     return todoController;
-})();
+}());
 angular.module("basicDemo").controller("TodoListController", todoController);
 //# sourceMappingURL=todo.js.map
