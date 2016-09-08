@@ -1,15 +1,13 @@
-interface ItodoController{
+interface ItodoController {
     todos:TodoElement[];
     newTodoText:string;
 
-  
-    
     // remaining():number;
     // archive():void;
     // addTodo():void;
 }
 
-class TodoElement{
+class TodoElement {
     text: string;
     done:boolean;
 }
