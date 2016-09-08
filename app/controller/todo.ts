@@ -1,6 +1,6 @@
 interface ItodoController {
-    todos:TodoElement[];
-    newTodoText:string;
+    todos: TodoElement[];
+    newTodoText: string;
 
     // remaining():number;
     // archive():void;
@@ -9,45 +9,45 @@ interface ItodoController {
 
 class TodoElement {
     text: string;
-    done:boolean;
+    done: boolean;
 }
 
-class todoController implements ItodoController{
-    todos:TodoElement[];
-    newTodoText:string
-    
-    constructor(){
+class todoController implements ItodoController {
+    todos: TodoElement[];
+    newTodoText: string
+
+    constructor() {
         console.log("nguyen dinh minh");
-        this.todos=[
-            {text:'learn angular', done:true},
-            {text:'build an angular app', done:false}];
+        this.todos = [
+            { text: 'learn angular', done: true },
+            { text: 'build an angular app', done: false }];
     }
 
-    addTodo(){
-        this.todos.push({text:this.newTodoText, done:false});
+    addTodo() {
+        this.todos.push({ text: this.newTodoText, done: false });
     }
 
-    
-    
-    remaining():number{
-        let count:number=0;
+
+
+    remaining(): number {
+        let count: number = 0;
 
         this.todos.forEach(elementToDo => {
-            count+=elementToDo.done?0:1;
+            count += elementToDo.done ? 0 : 1;
         });
         return count;
     }
-    
-    archive():void{
-        let oldToDos:TodoElement[];
-        oldToDos=this.todos;
-        this.todos=[];
-        
+
+    archive(): void {
+        let oldToDos: TodoElement[];
+        oldToDos = this.todos;
+        this.todos = [];
+
         oldToDos.forEach(elementToDo => {
-            if(!elementToDo.done){
+            if (!elementToDo.done) {
                 this.todos.push(elementToDo);
             }
         });
     }
 }
-angular.module("basicDemo").controller("TodoListController",todoController )
+angular.module("basicDemo").controller("TodoListController", todoController)
